@@ -1,7 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5e58157f-0fc7-4f89-a9a3-c68b97f08c15" name="Default Changelist" comment="" />
+    <list default="true" id="5e58157f-0fc7-4f89-a9a3-c68b97f08c15" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tempates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/application.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/database_help.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/stats_helper.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/.dockerignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/public/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/public/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/public/logo192.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/public/logo512.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/public/manifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/public/robots.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/App.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/App.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/App.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/components/charts.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/components/menu.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/components/navbar.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/components/table.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/components/timeline.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/logo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/reportWebVitals.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/setupTests.js" beforeDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -12,11 +44,23 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1qTKwj713Iylo9aYb4HVq2cO759" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunDashboard">
@@ -43,5 +87,18 @@
       <updated>1617098379305</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
