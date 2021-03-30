@@ -37,6 +37,5 @@ function receive(problems, actualUser){
                 allCardDiv.appendChild(cardText);
             }
         }
-
     });
 }
