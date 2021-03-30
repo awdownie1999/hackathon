@@ -1,11 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import { BasicTable } from './components/table'
 import { ButtonAppBar } from "./components//navbar"
-import { Example } from "./components//charts"
-import { CustomizedTimeline } from './components/timeline'
 import Grid from '@material-ui/core/Grid';
-import Typography from '@material-ui/core/Typography';
 import axios from 'axios';
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -23,7 +19,6 @@ function App() {
   });
   
   const classes = useStyles();
-  
   
   const [data, setData] = useState([])
   const [dataLoad, setDataLoad] = useState(false)
@@ -50,18 +45,7 @@ function App() {
     <div className="App">
     
     <ButtonAppBar/>
-    <Grid container spacing={1}>
-    <Grid item xs={12} sm={6} className={classes.table}>
-    <BasicTable data={data}/>
-      </Grid>
-        <Grid item xs={12} sm={6}>
-        <Typography variant="h4">
-        Progress Chart
-      </Typography>
-        <Example/>
-        </Grid>
-        </Grid>
-        <CustomizedTimeline/>
+    <Grid container spacing={1} />
     </div>
   );
 }

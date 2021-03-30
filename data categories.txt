@@ -1,0 +1,14 @@
+
+id	key incremented by 1
+employee_id	1001 to 9999
+employee_name	Names
+age	30 to 60
+gender	M and F
+Occupation	Devloper, BA, Tester, DBA
+
+
+Month	Jan to Dec	
+Exercise_time	20min to 150min per day 	600 to  4500 per month 
+Social Interaction time	5min to 60min per day	150 to 1800
+Work Time	6 to 7.5 hours per day	10800 to 13500
+Sleep time	4 to 10hours per day	7200 to 18000

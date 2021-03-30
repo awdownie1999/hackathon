@@ -1,0 +1,41 @@
+version: '3.1'
+services: 
+    web:
+        stdin_open: true
+        tty: true
+        build: 
+            context: ./web
+            dockerfile: ./Dockerfile
+        ports: 
+            - 8080:3000
+        environment: 
+            - CHOKIDAR_USEPOLLING=true
+        volumes: 
+            - "./web:/build/web"
+            - "/build/web/node_modules"
+        depends_on: 
+            - db
+        command: ["npm", "start"]
+
+    server:
+        build: 
+            context: ./server
+            dockerfile: ./Dockerfile
+        ports:
+            - 5000:5000
+        volumes: 
+            - "./server:/build/server"
+        depends_on: 
+            - web
+        command: ["python", "application.py"]
+    
+    db:
+        image: "mysql:8.0"
+        ports:
+            - 3306:3306
+        volumes:
+            - ./data:/docker-entrypoint-initdb.d
+        environment:
+            MYSQL_DATABASE: uu_code_challenge
+            MYSQL_ROOT_PASSWORD: password
+            MYSQL_INITDB_SKIP_TZINFO:
