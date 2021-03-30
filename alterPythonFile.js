@@ -20,13 +20,13 @@ async function createCards() {
         let cardBody = document.createElement('div');
         let title = document.createElement('h3');
         let cardText = document.createElement('p');
-        let cardHelpBtn = document.createElement('button');
+        let cc = document.createElement('button');
 
         card.setAttribute('class', 'card');
         cardBody.setAttribute('class', 'card-body');
         title.setAttribute('class', 'card-title');
         cardText.setAttribute('class', 'card-text');
-        cardText.setAttribute('class', 'btn btn-primary');
+        cardHelpBtn.setAttribute('class', 'btn btn-primary');
 
         title.innerHTML = problem.title;
         title.innerHTML = problem.cardtext; 
