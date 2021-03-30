@@ -22,8 +22,8 @@ async function createCards() {
         
         users.forEach(function (user) {
             if(problem.uid == user.uid){
-                console.log('User Id', user.uid)
-                userID = user.id
+                console.log('User Id should be ', user.uid)
+                userID = user.uid
                 username = user.name
                 usertype = user.type
             }
@@ -54,7 +54,10 @@ async function createCards() {
             //console.log('hfjksb\kjhfdb');
             let newProblem = document.createElement('btn');
             newProblem.appendChild(headerDiv);
-            console.log(userID);
+            
+            console.log('user id ', userID);
+            console.log('problem user id ', problem.uid);
+
             if(problem.uid == userID){
                 console.log('testysd');
                 allCardDiv.appendChild(card);
@@ -62,7 +65,7 @@ async function createCards() {
                 allCardDiv.appendChild(title);
                 allCardDiv.appendChild(cardText);
             }else{
-                console.log('test')
+                //console.log('test')
                 if(loop == 0){
                     allCardDiv.appendChild(card);
                     allCardDiv.appendChild(cardBody);
