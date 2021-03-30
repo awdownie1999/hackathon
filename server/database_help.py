@@ -5,10 +5,10 @@ class Database:
 
     def __init__(self):
         self.con = mysql.connector.connect(
-            host="db",
+            host="127.0.0.1",
             user="root",
             password="password",
-            database="uu_code_challenge",
+            database="hackathon",
             auth_plugin = 'mysql_native_password'
         )
         self.cursor = self.con.cursor(dictionary=True)
