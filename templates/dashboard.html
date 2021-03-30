@@ -8,26 +8,35 @@
     <script src="../js/dash.js"></script>
 </head>
 <body>
-   <!-- after login 
-   pulls in card data depending on role
-   @role
+<div class="container">
+  
 
-   @role= -->
-   existing cards
-
-   @foreach(cards as card)
-   <div class="card" style="width: 18rem;">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a href="#" class="card-link">Card link</a>
-      <a href="#" class="card-link">Another link</a>
-    </div>
+  <div class="header">
+    @role('patient')
+      <a href="wallCreate.html">Create</a>
+    @endrole
   </div>
+  
+  <div class="all-cards">
+    @foreach(cards as card)
+    <div class="card" style="width: 18rem;">
+     <div class="card-body">
+       <h5 class="card-title">Card title</h5>
+       <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        @role('therapist')
+          <a href="#" class="card-link">Another link</a>
+        @endrole('therapist')
+     </div>
+   </div>
+  
+  
+  
+    @endforeach
+  </div>
+</div>
 
 
-
-   @endforeach
+   
 </body>
 </html>
