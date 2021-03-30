@@ -2,8 +2,9 @@ let users;
 let problems;
 async function getJsonData() {
     let res = await axios.get('http://localhost:5000');
-    console.log(res.data)
+    //console.log(res.data)
     users = JSON.parse(res.data.users);
+    console.log(users);
     problems = JSON.parse(res.data.problems);
     console.log(users[0]);
 }
@@ -11,25 +12,26 @@ async function getJsonData() {
 async function createCards() {
     let allCardDiv = document.querySelector('#all-cards');
     let headerDiv = document.querySelector('#header');
-    user = users[0];   
+    user = users[4];   
 
-    let loop = 0;
+
     problems.forEach(function (problem) {
-        loop += 1;            
+        console.log('problems ', problem)    
+
         let card = document.createElement('div');
         let cardBody = document.createElement('div');
         let title = document.createElement('h3');
         let cardText = document.createElement('p');
-        let cc = document.createElement('button');
+        let cardHelpBtn = document.createElement('button');
 
         card.setAttribute('class', 'card');
         cardBody.setAttribute('class', 'card-body');
         title.setAttribute('class', 'card-title');
-        cardText.setAttribute('class', 'card-text');
         cardHelpBtn.setAttribute('class', 'btn btn-primary');
 
-        title.innerHTML = problem.title;
-        title.innerHTML = problem.cardtext; 
+        title.innerHTML = user.name
+        cardText.innerHTML = problem.problem;
+        cardHelpBtn.innerHTML = "Help " + user.name 
 
         if(user.type == 'therapist'){
             allCardDiv.appendChild(card);
@@ -39,9 +41,7 @@ async function createCards() {
             allCardDiv.appendChild(cardHelpBtn);
         }else{
             let newProblem = document.createElement('button');
-            if(loop == 1){
-                newProblem.appendChild(headerDiv);
-            }
+            newProblem.appendChild(headerDiv);
 
             if(problem.userId == user.id){
                 allCardDiv.appendChild(card);
