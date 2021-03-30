@@ -11,7 +11,8 @@ async function getJsonData() {
 
 async function createCards() {
     let allCardDiv = document.querySelector('#all-cards');
-    let headerDiv = document.querySelector('#header'); 
+    let headerDiv = document.querySelector('#header');
+    let loop = 0;
 
     problems.forEach(function (problem) {
         console.log('problems ', problem)    
@@ -49,16 +50,25 @@ async function createCards() {
             allCardDiv.appendChild(cardText);
             allCardDiv.appendChild(cardHelpBtn);
         }else{
+            //console.log('hfjksb\kjhfdb');
             let newProblem = document.createElement('button');
             newProblem.appendChild(headerDiv);
 
-            if(problem.userId == userID){
+            if(problem.uid == userID){
                 allCardDiv.appendChild(card);
                 allCardDiv.appendChild(cardBody);
                 allCardDiv.appendChild(title);
                 allCardDiv.appendChild(cardText);
+            }else{
+                if(loop == 0){
+                    allCardDiv.appendChild(card);
+                    allCardDiv.appendChild(cardBody);
+                    allCardDiv.appendChild(title);
+                    title.innerHTML = "Please add a problem";
+                }
             }
         }
+        loop += 1;
     });
 }
 
