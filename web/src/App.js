@@ -40,7 +40,6 @@ function App() {
     },[dataLoad]);
 
 
-
   return (
     <div className="App">
     
