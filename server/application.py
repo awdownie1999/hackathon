@@ -13,7 +13,12 @@ stats_helper = StatsHelper()
 def homepage():
     users = json.dumps(stats_helper.select_all_users())
     problems = json.dumps(stats_helper.select_all_problems())
-    return users, problems
+    JSONLIST = {
+        "users": users,
+        "problems": problems
+    }
+
+    return json.dumps(JSONLIST)
 
 print("### Application started...")
 
