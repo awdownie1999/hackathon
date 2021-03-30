@@ -4,19 +4,28 @@ async function getJsonData() {
     let res = await axios.get('http://localhost:5000');
     //console.log(res.data)
     users = JSON.parse(res.data.users);
-    console.log(users);
+    //console.log(users);
     problems = JSON.parse(res.data.problems);
-    console.log(users[0]);
+    //console.log(users[0]);
 }
 
 async function createCards() {
     let allCardDiv = document.querySelector('#all-cards');
-    let headerDiv = document.querySelector('#header');
-    user = users[4];   
-
+    let headerDiv = document.querySelector('#header'); 
 
     problems.forEach(function (problem) {
         console.log('problems ', problem)    
+        let username;
+        let usertype;
+        let userID;  
+
+        users.forEach(function (user){
+            if(problem.uid == user.uid){
+                userID = user.id
+                username = user.name
+                usertype = user.type
+            }
+        })
 
         let card = document.createElement('div');
         let cardBody = document.createElement('div');
@@ -29,11 +38,11 @@ async function createCards() {
         title.setAttribute('class', 'card-title');
         cardHelpBtn.setAttribute('class', 'btn btn-primary');
 
-        title.innerHTML = user.name
+        title.innerHTML = username
         cardText.innerHTML = problem.problem;
-        cardHelpBtn.innerHTML = "Help " + user.name 
+        cardHelpBtn.innerHTML = "Help " + username 
 
-        if(user.type == 'therapist'){
+        if(usertype == 'therapist'){
             allCardDiv.appendChild(card);
             allCardDiv.appendChild(cardBody);
             allCardDiv.appendChild(title);
@@ -43,7 +52,7 @@ async function createCards() {
             let newProblem = document.createElement('button');
             newProblem.appendChild(headerDiv);
 
-            if(problem.userId == user.id){
+            if(problem.userId == userID){
                 allCardDiv.appendChild(card);
                 allCardDiv.appendChild(cardBody);
                 allCardDiv.appendChild(title);
