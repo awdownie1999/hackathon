@@ -1,14 +1,15 @@
 import mysql.connector
-
+import time
 
 class Database:
 
     def __init__(self):
+        time.sleep(5)
         self.con = mysql.connector.connect(
-            host="127.0.0.1",
+            host="db",
             user="root",
             password="password",
-            database="hackathon",
+            database="uu_code_challenge",
             auth_plugin = 'mysql_native_password'
         )
         self.cursor = self.con.cursor(dictionary=True)

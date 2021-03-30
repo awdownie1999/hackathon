@@ -2,4 +2,3 @@ Flask==1.1.2
 mysql-connector-python
 flask-cors
 # mysql-connector==2.2.9
-

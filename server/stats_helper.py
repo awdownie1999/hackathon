@@ -7,17 +7,12 @@ class StatsHelper():
         self.database = Database()
         print("Stats Helping initialising!")
 
-    def select_all_employee(self):
-        result = self.database.fetch_all("SELECT * FROM employeedata")
+    def select_all_users(self):
+        result = self.database.fetch_all("SELECT * FROM user")
         return result
 
-    def select_all(self):
-        result = self.database.fetch_all("SELECT * FROM dayroutine limit 0,7")
-        return result
-
-
-    def join_all(self):
-        result = self.database.fetch_all("SELECT * FROM dayroutine as a left join employeedata b on a.employee_id = b.employee_id")
+    def select_all_problems(self):
+        result = self.database.fetch_all("SELECT * FROM problem")
         return result
 
     # HINT: You can define more queries here, along with some python logic to calculate!

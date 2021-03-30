@@ -1,4 +1,7 @@
+DROP TABLE IF EXISTS `problem`;
 DROP TABLE IF EXISTS `user`;
+
+--add user table 
 CREATE TABLE `user` (
 `uid` int(6) NOT NULL,
 `name` char(50) DEFAULT NULL,
@@ -9,6 +12,18 @@ CREATE TABLE `user` (
 PRIMARY KEY (`uid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+
+--add problem table 
+CREATE TABLE `problem` (
+`pid` int(6) unsigned NOT NULL AUTO_INCREMENT,
+`problem` char(50) DEFAULT NULL,
+`uid` int(6),
+PRIMARY KEY (`pid`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--add foreign key to problem table
+ALTER TABLE `problem`
+ADD FOREIGN KEY (`uid`) REFERENCES user(`uid`);
 INSERT INTO `user` (`uid`, `name`, `email`, `password`, `age`, `type`) VALUES
 ('1','Jim Kullan','jim.k@gmail.com', 'password1', '32', 'patient'),
 ('2','Gemma Magee','gemma.m@gmail.com', 'password2', '26', 'patient'),
@@ -20,21 +35,6 @@ INSERT INTO `user` (`uid`, `name`, `email`, `password`, `age`, `type`) VALUES
 ('8','Dr. Nathan McAllister','nathan.m@gmail.com', 'password8', '46', 'therapist'),
 ('9','Dr. Ryan Murphy','ryan.m@gmail.com', 'password9', '54', 'therapist'),
 ('10','Dr. Amy Young','amy.y@gmail.com', 'password10', '33', 'therapist');
-UNLOCK TABLES;
-
-
-
-
-DROP TABLE IF EXISTS `problem`;
-CREATE TABLE `problem` (
-`pid` int(6) unsigned NOT NULL AUTO_INCREMENT,
-`problem` char(50) DEFAULT NULL,
-`uid` int(6),
-PRIMARY KEY (`pid`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
-ALTER TABLE `problem`
-ADD FOREIGN KEY (`uid`) REFERENCES user(`uid`);
 
 INSERT INTO `problem` (`pid`, `problem`, `uid`) VALUES
 ('1','Bipolar affective disorder', '3'),
@@ -43,4 +43,4 @@ INSERT INTO `problem` (`pid`, `problem`, `uid`) VALUES
 ('4','Eating Disorder', '1'),
 ('5','Anxiety disorder', '7'),
 ('6','Depression', '5'),
-('7','Bipolar affective disorder', '6')
+('7','Bipolar affective ', '6');

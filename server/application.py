@@ -11,19 +11,9 @@ stats_helper = StatsHelper()
 
 @app.route('/')
 def homepage():
-
-    return json.dumps(stats_helper.select_all())
-
-
-@app.route('/employee')
-def employee():
-    return json.dumps(stats_helper.select_all_employee())
-
-
-@app.route('/alldata')
-def alldata():
-    return json.dumps(stats_helper.join_all())
-
+    users = json.dumps(stats_helper.select_all_users())
+    problems = json.dumps(stats_helper.select_all_problems())
+    return users, problems
 
 print("### Application started...")
 
